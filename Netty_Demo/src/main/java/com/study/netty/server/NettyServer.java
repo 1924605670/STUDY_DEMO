@@ -7,11 +7,13 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @Author chengzhihua
  * @Date 2020/2/21 14:29
  */
+@Slf4j
 public class NettyServer {
 
     private int port;
@@ -42,6 +44,7 @@ public class NettyServer {
                     });
 
             ChannelFuture channelFuture = bootstrap.bind(port).sync();
+            log.info("服务端启动正常！！！端口 {}",port);
 
             //监听关闭
             channelFuture.channel().closeFuture().sync();
