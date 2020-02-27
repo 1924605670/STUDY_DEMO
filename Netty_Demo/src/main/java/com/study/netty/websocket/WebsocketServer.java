@@ -1,6 +1,5 @@
-package com.study.netty.com.study.netty.websocket;
+package com.study.netty.websocket;
 
-import com.sun.corba.se.internal.CosNaming.BootstrapServer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -11,7 +10,6 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
-import io.netty.handler.codec.http.websocketx.WebSocketFrameAggregator;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;

@@ -1,4 +1,4 @@
-package com.study.netty.com.study.netty.websocket;
+package com.study.netty.websocket;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
