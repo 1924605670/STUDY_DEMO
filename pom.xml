@@ -19,6 +19,7 @@
         <module>Sync_Demo</module>
         <module>Netty_Demo</module>
         <module>Es_Demo</module>
+        <module>Collections_Demo</module>
     </modules>
 
     <properties>
