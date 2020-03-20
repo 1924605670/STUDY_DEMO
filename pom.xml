@@ -20,6 +20,8 @@
         <module>Netty_Demo</module>
         <module>Es_Demo</module>
         <module>Collections_Demo</module>
+        <module>JUC_Demo</module>
+        <module>BigData_Demo</module>
     </modules>
 
     <properties>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://server1:9000</value>
+    </property>
+    <property>
+        <name>io.file.buffer.size</name>
+        <value>131072</value>
+    </property>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>file:/soft/hadoop-2.6.5/temp</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.hduser.hosts</name>
+        <value>*</value>
+    </property>
+    <property>
+        <name>hadoop.proxyuser.hduser.groups</name>
+        <value>*</value>
+    </property>
+    <!-- ZooKeeper集群的地址 -->
+    <property>
+        <name>ha.zookeeper.quorum</name>
+        <value>server1:2181,server2:2181,server3:2181</value>
+    </property>
+    <property>
+        <!-- ZKFC连接到ZooKeeper超时时长 -->
+        <name>ha.zookeeper.session-timeout.ms</name>
+        <value>10000</value>
+    </property>
+</configuration>
