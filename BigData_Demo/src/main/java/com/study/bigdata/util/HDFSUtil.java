@@ -20,7 +20,8 @@ public class HDFSUtil {
         // 删除文件（夹）
         // 加载文件系统实例
         FileSystem fs = FileSystem.get(new URI("hdfs://server1:9000/"), conf);
-        fs.delete(new Path(path), true);
+        boolean flag = fs.delete(new Path(path), true);
+        System.out.println(flag);
     }
 
 }

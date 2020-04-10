@@ -27,7 +27,7 @@ public class WordCountJob {
 
         configuration.set("mapred.jar","/Users/chengzhihua/IdeaProjects/STUDY_DEMO/BigData_Demo/target/BigData_Demo-1.0-SNAPSHOT.jar");
 
-        HDFSUtil.del(args[1].substring(args[1].indexOf("9000")),configuration);
+        HDFSUtil.del(args[1].substring(args[1].indexOf("9000")+4),configuration);
 
         Job job = Job.getInstance(configuration);
 

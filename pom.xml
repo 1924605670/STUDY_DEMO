@@ -22,6 +22,8 @@
         <module>Collections_Demo</module>
         <module>JUC_Demo</module>
         <module>BigData_Demo</module>
+        <module>Scala_Demo</module>
+        <module>Spark_Demo</module>
     </modules>
 
     <properties>
