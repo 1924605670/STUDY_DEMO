@@ -24,6 +24,7 @@
         <module>BigData_Demo</module>
         <module>Scala_Demo</module>
         <module>Spark_Demo</module>
+        <module>Java_Design_Mode</module>
     </modules>
 
     <properties>

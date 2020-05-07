@@ -37,6 +37,9 @@ object Spark03 {
     d.foreach(println)
 
 //    res.foreach(println)
+    // 只对v进行操作
+    rdd.mapValues(v => v+"||||||").foreach(println)
+
 
 
   }
