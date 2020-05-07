@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/s")
 public class StrategyController {
 
-    @RequestMapping(value = "/test/{classType}", method = RequestMethod.GET)
+    @GetMapping(value = "/test/{classType}")
     public String test(@PathVariable("classType") String classType) {
         if (classType.equals("1")) {
             BeanA beanA = new BeanA();
