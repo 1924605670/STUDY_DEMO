@@ -1,1 +1,0 @@
-/Users/chengzhihua/IdeaProjects/BCHT_ITS_DATA_INSERT/BCHT_ITS_MQDATA_TO_GAW/target/

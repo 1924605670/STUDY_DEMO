@@ -1,4 +1,4 @@
-package com.czh.scala.study_01
+package com.czh.scala.study_spark_core
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{Partitioner, SparkConf, SparkContext}
