@@ -14,6 +14,7 @@ public class SyncService {
 
     @Async
     public void sync() throws InterruptedException {
+        log.info("执行sync异步方法");
         Thread.sleep(3000);
         log.info("当前线程--{}", Thread.currentThread().getName());
     }

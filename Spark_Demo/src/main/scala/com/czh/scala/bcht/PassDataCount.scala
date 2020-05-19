@@ -70,7 +70,7 @@ object PassDataCount {
         }
       }
 
-      EsSpark.saveJsonToEs(res,esConfig)
+      EsSpark.saveJsonToEs(res, esConfig)
 
     })
 
@@ -80,7 +80,8 @@ object PassDataCount {
 
   }
 }
-  case class PassBean(gcbh: String, sbxh: String, jgsjStr: String, hphm: String, hpzl: String, hpys: String, cwkc: Double, clys: String, cllx: String, sd: Double, cdbh: Int, fx: String, sjlx: String, lsh: String, dataList: String, jgsj: String, hjsj: String, scsj: String, ffsj: String, rksj: String, jrsj: String) extends Serializable
 
-  case class PassCountBean(id: String, sbxh: String, count: Int, startTime: String) extends Serializable
+case class PassBean(gcbh: String, sbxh: String, jgsjStr: String, hphm: String, hpzl: String, hpys: String, cwkc: Double, clys: String, cllx: String, sd: Double, cdbh: Int, fx: String, sjlx: String, lsh: String, dataList: String, jgsj: String, hjsj: String, scsj: String, ffsj: String, rksj: String, jrsj: String) extends Serializable
+
+case class PassCountBean(id: String, sbxh: String, count: Int, startTime: String) extends Serializable
 
