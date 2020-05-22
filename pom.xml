@@ -25,6 +25,7 @@
         <module>Scala_Demo</module>
         <module>Spark_Demo</module>
         <module>Java_Design_Mode</module>
+        <module>Flink_Demo</module>
     </modules>
 
     <properties>
