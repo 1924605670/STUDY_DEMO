@@ -26,6 +26,10 @@
         <module>Spark_Demo</module>
         <module>Java_Design_Mode</module>
         <module>Flink_Demo</module>
+        <module>Other_Demo</module>
+        <module>RabbitMq_Demo</module>
+        <module>Springboot_Demo</module>
+        <module>TestDemo</module>
     </modules>
 
     <properties>
