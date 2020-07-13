@@ -28,8 +28,10 @@
         <module>Flink_Demo</module>
         <module>Other_Demo</module>
         <module>RabbitMq_Demo</module>
-        <module>Springboot_Demo</module>
+        <module>Config_From_Db_Demo</module>
         <module>TestDemo</module>
+        <module>Spring_Source_Demo</module>
+        <module>Annotation_Demo</module>
     </modules>
 
     <properties>
