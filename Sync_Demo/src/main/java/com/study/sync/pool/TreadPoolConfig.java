@@ -22,6 +22,7 @@ public class TreadPoolConfig implements AsyncConfigurer {
     public Executor getAsyncExecutor() {
         log.info("线程池数量：{}",Runtime.getRuntime().availableProcessors());
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        System.out.println(executor.getPoolSize());
         //核心线程池数量，方法: 返回可用处理器的Java虚拟机的数量。
         executor.setCorePoolSize(Runtime.getRuntime().availableProcessors());
         //最大线程数量

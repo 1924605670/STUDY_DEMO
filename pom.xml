@@ -32,6 +32,7 @@
         <module>TestDemo</module>
         <module>Spring_Source_Demo</module>
         <module>Annotation_Demo</module>
+        <module>Bit_Operation_Demo</module>
     </modules>
 
     <properties>
