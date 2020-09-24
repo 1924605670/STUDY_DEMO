@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @Author chengzhihua
@@ -30,18 +31,33 @@ public class SyncController {
 
     @GetMapping("/hello")
     public String sync() throws InterruptedException {
-      log.info("hello 请求！！！{}",++count);
+        log.info("hello 请求！！！{}", ++count);
 //        for (int i = 0; i < 8; i++) {
 ////            syncService.sync();
 //            interfaceSync.testSync();
 //        }
-        List list = Arrays.asList(1,2,3,4,5,6,7,8);
+        List list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
         list.stream().forEach(x -> {
-            log.info("{}",x);
+            log.info("{}", x);
             interfaceSync.testSync();
 
         });
         return "hello sync";
     }
+
+    @GetMapping("/add")
+    public String syncAdd() {
+        interfaceSync.save();
+        return "OK";
+    }
+
+    @GetMapping("/add2")
+    public String syncAdd2() {
+        for (int i = 0; i < 1000000; i++) {
+            interfaceSync.save2();
+        }
+        return "OK";
+    }
+
 
 }

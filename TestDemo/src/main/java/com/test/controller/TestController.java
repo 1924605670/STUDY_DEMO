@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @RequestMapping(value = "/t")
-@DependsOn(value = "configBeforeInit")
+//@DependsOn(value = "configBeforeInit")
 public class TestController {
-    @Value("${test.prop}")
-    private String testProp;
+//    @Value("${test.prop}")
+//    private String testProp;
 
     @GetMapping(value = "/test")
     public String test() {
-        System.out.println(testProp + "---");
+//        System.out.println(testProp + "---");
         return "aaa";
     }
 }

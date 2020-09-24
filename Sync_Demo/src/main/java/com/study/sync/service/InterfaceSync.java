@@ -13,4 +13,10 @@ public interface InterfaceSync {
 
     @Async
     public void testSync() ;
+
+    @Async
+    public void save();
+
+    @Async
+    public void save2();
 }

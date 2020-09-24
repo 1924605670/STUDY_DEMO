@@ -8,6 +8,7 @@ import org.springframework.scheduling.annotation.AsyncConfigurer;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.concurrent.Executor;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @Author chengzhihua
@@ -20,20 +21,20 @@ public class TreadPoolConfig implements AsyncConfigurer {
 
     @Override
     public Executor getAsyncExecutor() {
-        log.info("线程池数量：{}",Runtime.getRuntime().availableProcessors());
+        log.info("线程池数量：{}", Runtime.getRuntime().availableProcessors());
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         System.out.println(executor.getPoolSize());
         //核心线程池数量，方法: 返回可用处理器的Java虚拟机的数量。
-        executor.setCorePoolSize(Runtime.getRuntime().availableProcessors());
+        executor.setCorePoolSize(Runtime.getRuntime().availableProcessors() * 2);
         //最大线程数量
-        executor.setMaxPoolSize(Runtime.getRuntime().availableProcessors() * 5);
+        executor.setMaxPoolSize(Runtime.getRuntime().availableProcessors() * 50);
         //线程池的队列容量
-        executor.setQueueCapacity(Runtime.getRuntime().availableProcessors() * 2);
+        executor.setQueueCapacity(Runtime.getRuntime().availableProcessors() * 20000);
         //线程名称的前缀
         executor.setThreadNamePrefix("this-excutor-");
         // setRejectedExecutionHandler：当pool已经达到max size的时候，如何处理新任务
         // CallerRunsPolicy：不在新线程中执行任务，而是由调用者所在的线程来执行
-        // executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
+        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
         executor.initialize();
         return executor;
     }
@@ -44,7 +45,6 @@ public class TreadPoolConfig implements AsyncConfigurer {
     @Override
     public AsyncUncaughtExceptionHandler getAsyncUncaughtExceptionHandler() {
         log.error("异步任务执行异常");
-        // TODO Auto-generated method stub
         return new SimpleAsyncUncaughtExceptionHandler();
     }
 

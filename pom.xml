@@ -33,6 +33,8 @@
         <module>Spring_Source_Demo</module>
         <module>Annotation_Demo</module>
         <module>Bit_Operation_Demo</module>
+        <module>Spring_Admin_Server</module>
+        <module>Utils_Demo</module>
     </modules>
 
     <properties>

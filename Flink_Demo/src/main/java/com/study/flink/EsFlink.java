@@ -1,6 +1,5 @@
 package com.study.flink;
 
-import com.study.flink.es.RestClientFactoryImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.flink.api.common.functions.RuntimeContext;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
@@ -14,10 +13,8 @@ import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer011;
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.client.Requests;
-import org.slf4j.LoggerFactory;
 
 import java.util.*;
-import java.util.logging.Logger;
 
 /**
  * @Author Cheng ZhiHua
@@ -79,7 +76,7 @@ public class EsFlink {
 //                    restClientBuilder.setDefaultHeaders()
 //                }
 //        );
-        esSinkBuilder.setRestClientFactory(new RestClientFactoryImpl());
+//        esSinkBuilder.setRestClientFactory(new RestClientFactoryImpl());
         esSinkBuilder.setFailureHandler(new RetryRejectedExecutionFailureHandler());
 
         student.addSink(esSinkBuilder.build());

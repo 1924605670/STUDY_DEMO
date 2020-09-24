@@ -2,11 +2,17 @@ package com.study.rabbit.lister;
 
 import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.rabbitmq.client.Channel;
+import com.study.rabbit.beans.DsTfcpassAllEntity;
+import com.study.rabbit.repo.PassAllRepo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.ExchangeTypes;
 import org.springframework.amqp.rabbit.annotation.*;
 import org.springframework.amqp.core.Message;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -16,9 +22,12 @@ import java.io.IOException;
  * @Date 2020-06-29 10:15
  * @Description
  **/
-@Component
+//@Component
 @Slf4j
 public class Listern {
+    private Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss.SSS").create();
+    @Autowired
+    private PassAllRepo passAllRepo;
 
     @RabbitListener(
             // 绑定队列，如果生命的queue，exchange，routekey不存在，会自动创建
@@ -44,6 +53,7 @@ public class Listern {
             )
     )
     public void messageHandle(Channel channel, Message message) throws IOException {
+//        channel.basicQos(0,300,false);
         handleMessage(channel, message);
     }
 
@@ -60,15 +70,18 @@ public class Listern {
             )
     )
     public void deadMessageHandle(Channel channel, Message message) throws IOException {
+//        channel.basicQos(0,300,false);
         handleMessage(channel, message);
     }
 
     private void handleMessage(Channel channel, Message message) throws IOException {
         try {
             String msg = new String(message.getBody(), CharsetUtil.CHARSET_UTF_8);
-            log.info("{}", msg);
+            DsTfcpassAllEntity ds = gson.fromJson(msg, DsTfcpassAllEntity.class);
+            passAllRepo.save(ds);
+
         } catch (Exception e) {
-            log.error("{}", e.getMessage());
+            e.printStackTrace();
         }
         // 手动 ack
         channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);

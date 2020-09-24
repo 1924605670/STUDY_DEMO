@@ -36,7 +36,7 @@ public class JsonTest {
         // 支持Map的key为复杂对象的形式
         gsonBuilder.enableComplexMapKeySerialization();
         // 格式化date型　　
-        gsonBuilder.setDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+        gsonBuilder.setDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         // 会把字段首字母大写,注:对于实体上使用了@SerializedName注解的不会生效.
         gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE);
         Gson gson = gsonBuilder.create();
