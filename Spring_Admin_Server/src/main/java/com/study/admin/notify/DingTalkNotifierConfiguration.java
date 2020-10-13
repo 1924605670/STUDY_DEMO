@@ -18,7 +18,7 @@ import de.codecentric.boot.admin.server.domain.entities.InstanceRepository;
 )
 @AutoConfigureBefore({NotifierTriggerConfiguration.class, CompositeNotifierConfiguration.class})
 public class DingTalkNotifierConfiguration {
-    @Bean
+//    @Bean
     @ConditionalOnMissingBean
     @ConfigurationProperties(prefix = "spring.boot.admin.notify.dingtalk")
     public DiyStatusChangeNotifier diyStatusChangeNotifier(InstanceRepository repository) {

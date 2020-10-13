@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @Slf4j
-@Service
+//@Service
 public class DiyStatusChangeNotifier extends AbstractStatusChangeNotifier {
 
     public DiyStatusChangeNotifier(InstanceRepository repository) {
