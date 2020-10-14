@@ -35,6 +35,7 @@
         <module>Bit_Operation_Demo</module>
         <module>Spring_Admin_Server</module>
         <module>Utils_Demo</module>
+        <module>Spring_Redis</module>
     </modules>
 
     <properties>
