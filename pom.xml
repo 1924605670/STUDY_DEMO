@@ -36,6 +36,8 @@
         <module>Spring_Admin_Server</module>
         <module>Utils_Demo</module>
         <module>Spring_Redis</module>
+        <module>RabbitMq_Produce</module>
+        <module>Thrift_Demo</module>
     </modules>
 
     <properties>

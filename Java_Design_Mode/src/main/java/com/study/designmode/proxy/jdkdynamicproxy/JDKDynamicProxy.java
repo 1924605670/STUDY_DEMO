@@ -11,6 +11,7 @@ import java.lang.reflect.Proxy;
 /**
  * @author chengzhihua
  * @description JDK动态代理
+ * JDK 底层是生成字节码文件，代理对象已经继承了Proxy对象，根据java的单继承多实现的原理，所以jdk动态代理对象必须是接口才能生成代理对象，通过实现该代理类生成代理对象
  * @date 2020/10/13
  */
 public class JDKDynamicProxy implements InvocationHandler {
