@@ -38,6 +38,7 @@
         <module>Spring_Redis</module>
         <module>RabbitMq_Produce</module>
         <module>Thrift_Demo</module>
+        <module>Thrift_Client_Demo</module>
     </modules>
 
     <properties>
