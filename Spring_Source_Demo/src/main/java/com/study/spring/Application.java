@@ -1,7 +1,10 @@
 package com.study.spring;
 
+import com.study.spring.service.ServiceA;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * @Author Cheng ZhiHua

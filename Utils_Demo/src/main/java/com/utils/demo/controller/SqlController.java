@@ -34,7 +34,7 @@ public class SqlController {
         passes.forEach(x -> {
             try {
                ImgUtil.write(ImgUtil.read(new URL(x.getTpurl())),new File("d://pic//"+x.getHphm()+ StrUtil.UNDERLINE+ RandomUtil.randomNumbers(5)+".jpg"));
-            } catch (MalformedURLException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         });
